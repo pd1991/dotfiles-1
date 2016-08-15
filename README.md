@@ -1,10 +1,4 @@
-# Ben Orenstein's dot files
-
-These are config files to set up a system the way I like it.
-
-Vim-users will likely find useful stuff in my [vimrc](vimrc), and also my [Ruby snippets](vim/snippets/ruby.snippets).
-
-I'm also a pretty aggressive aliaser. You might find a few you like in [zsh/aliases](zsh/aliases).
+# Forked and edited from Ben Orenstein's dot files
 
 ## Installation
 

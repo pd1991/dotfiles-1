@@ -1,6 +1,6 @@
 [user]
-	name = Ben Orenstein
-	email = ben.orenstein@gmail.com
+	name = Pradyumna
+	email = pradyumna2905@gmail.com
 [alias]
 	co = checkout
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
@@ -30,7 +30,7 @@
 [rerere]
 	enabled = 1
 [github]
-	user = r00k
+	user = pradyumna2905
 [merge]
         ff = only
 [fetch]
