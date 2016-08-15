@@ -1,6 +1,7 @@
 " ========================================================================
 " Vundle stuff
 " ========================================================================
+
 set nocompatible " Required by vundle
 filetype off     " Required by vundle
 
@@ -184,7 +185,7 @@ set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
 set relativenumber
-set number
+" set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set bg=light
@@ -274,11 +275,11 @@ endfunction
 " Search for call sites for term (excluding its definition) and
 " load into the quickfix list.
 function! SearchForCallSites(term)
-  cexpr system('ag ' . shellescape(a:term) . '\| grep -v def')
+  cexpr system('ag' . shellescape(a:term) . '\| grep -v def')
 endfunction
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,7 +288,8 @@ let g:ctrlp_use_caching = 0
 
 "Now using thoughtbot/vim-rspec and tpope/dispatch.
 
-let g:rspec_command = "!clear && bin/rspec {spec}"
+let g:rspec_command = '!clear && bin/rspec {spec}'
+" let g:rspec_command = 'Dispatch rspec {spec}'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

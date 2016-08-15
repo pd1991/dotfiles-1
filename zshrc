@@ -36,3 +36,5 @@ export PATH=$PATH:$HOME/.dotfiles/bin
 
 # RVM
 [[ -s "/Users/ben/.rvm/scripts/rvm" ]] && source "/Users/ben/.rvm/scripts/rvm"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
