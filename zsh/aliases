@@ -48,6 +48,8 @@ alias patch='git format-patch HEAD^ --stdout > patch.diff'
 alias rc='bin/rails console'
 alias rdm0='bin/rake db:migrate VERSION=0'
 alias rdm="bin/rake db:migrate"
+alias routes="bin/rake routes"
+alias routesg="bin/rake routes | grep"
 alias retro='vim ~/Dropbox/work/thoughtbot/notes/formkeep/retros.md'
 alias rdtp="bin/rake db:test:prepare"
 alias reguard='killall -9 ruby ; guard'
