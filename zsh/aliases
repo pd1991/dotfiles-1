@@ -77,6 +77,7 @@ alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --ex
 alias review="git diff master"
 alias rs='bundle check && rails server -p 3000'
 alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
+alias sales='vim ~/Dropbox/work/thoughtbot/notes/outbound-sales/sales.md'
 alias sc='staging-console'
 alias sfh='cd ~/code/speaking-for-hackers-book'
 alias shpush='rake && hpush'
@@ -104,7 +105,7 @@ alias v='vim'
 alias vi='vim'
 alias w='cd ~/code/upcase-exercises'
 alias wi='vim -c ":e /Users/ben/Dropbox/work/thoughtbot/notes/weekly-iteration"'
-alias worknotes='vim ~/Dropbox/work/thoughtbot/notes/formkeep -c "Ex"'
+alias worknotes='vim ~/Dropbox/work/thoughtbot/notes -c "Ex"'
 alias wr='vim ~/Dropbox/work/thoughtbot/notes/weekly-review-checklist.md'
 
 # Heroku staging
