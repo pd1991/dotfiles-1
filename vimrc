@@ -170,6 +170,7 @@ map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 " map <C-x> <C-w>c
+map <C-x> <C-w>c
 map <C-w> <esc>:q!<CR>
 
 " Emacs-like beginning and end of line.
