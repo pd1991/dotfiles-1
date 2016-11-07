@@ -155,6 +155,10 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
+" Remapping vim and tmux windows
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -171,7 +175,6 @@ imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 " map <C-x> <C-w>c
 map <C-x> <C-w>c
-map <C-w> <esc>:q!<CR>
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -200,6 +203,7 @@ set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
 set relativenumber
+set number
 set textwidth=79
 " set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
@@ -372,6 +376,8 @@ autocmd FileType markdown setlocal nolist wrap lbr
 " Wrap the quickfix window
 autocmd FileType qf setlocal wrap linebreak
 
+"  Make sure tmux does not overlap vim splits
+autocmd VimResized * :wincmd =
 " Make it more obviouser when lines are too long
 highlight ColorColumn ctermbg=235
 
