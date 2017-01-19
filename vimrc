@@ -142,6 +142,7 @@ map <Leader>vm :Vmodel<cr>
 map <Leader>vv :Vview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
+map <Leader>nh :noh<cr>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -301,6 +302,8 @@ endfunction
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
+
+let g:ctrlp_match_window = 'min:4,max:999'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff

@@ -38,3 +38,9 @@ export PATH=$PATH:$HOME/.dotfiles/bin
 [[ -s "/Users/pradyumna/.rvm/scripts/rvm" ]] && source "/Users/pradyumna/.rvm/scripts/rvm"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Oracle Client Libraries
+export OCI_DIR=/opt/oracle/instantclient_12_1
+export SQLPATH=/opt/oracle/instantclient_12_1
+export ORACLE_HOME=/opt/oracle/instantclient_12_1
+export NLS_LANG=AMERICAN_AMERICA.UTF8
