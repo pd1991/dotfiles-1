@@ -22,6 +22,8 @@ alias meriad='~/code/meriad'
 alias meraid='~/code/meriad'
 alias meriadl='~/code/meriad'
 alias eba='cd ~/code/eba'
+alias bb='cd ~/code/eba_black_box'
+alias int='cd ~/code/eba_intake'
 alias d='cd ~/.dotfiles'
 alias meriad='cd ~/code/meriad'
 alias drop='cd ~/Dropbox'
@@ -67,6 +69,8 @@ alias mastre='master'
 alias newblog='z blog ; rake new'
 alias newscreen="tmux"
 alias tmuxeba="cd ~/code/eba && tmux new -s eba"
+alias tmuxint="cd ~/code/eba_intake && tmux new -s intake"
+alias tmuxbb="cd ~/code/eba_black_box && tmux new -s bb"
 alias notes="cd ~/Dropbox/notes ; vim ."
 alias onboard='vim ~/Dropbox/docs/briefs-onboarding.txt'
 alias patch='git format-patch HEAD^ --stdout > patch.diff'
@@ -83,7 +87,7 @@ alias rdm0='bin/rake db:migrate VERSION=0'
 alias resetapp='bin/rake db:migrate VERSION=0 && bin/rake db:migrate && bin/rake db:seed && bundle install && forman start'
 alias routes='bin/rake routes'
 alias routesg='bin/rake routes | grep'
-alias resetdb='bin/rake db:migrate VERSION=0 && bin/rake db:migrate'
+alias resetdb='bin/rake db:reset'
 alias seed='bin/rake db:seed'
 alias rdtp="bin/rake db:test:prepare"
 alias reguard='killall -9 ruby ; guard'

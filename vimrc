@@ -80,25 +80,26 @@ let mapleader = ","
 
 imap jj <esc>
 map <Leader>ac :sp app/controllers/application_controller.rb<cr>
-vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+" vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+map <Leader>b :Gblame<cr>
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
-map <Leader>cc :!cucumber --drb %<CR>
+map <Leader>cc :!clear && cucumber %<CR>
+map <Leader>ct :!cucumber<CR>
 map <Leader>cu :Tabularize /\|<CR>
 map <Leader>co mmggVG"*y`m
-map <Leader>cc :Rjcollection client/
+" map <Leader>cc :Rjcollection client/
 map <Leader>cj :Rjspec client/
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
-map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
-map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
+map <Leader>d Obinding.pry<esc>:w<cr>
 map <Leader>dr :e ~/Dropbox<cr>
 map <Leader>dj :e ~/Dropbox/notes/debugging_journal.txt<cr>
 map <Leader>ec :e ~/code/
-map <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
+map <Leader>gw :!git add . && git commit -m 'WIP'<cr>
 map <Leader>gl :e Gemfile.lock<cr>
 map <Leader>f :call OpenFactoryFile()<CR>
 map <Leader>fix :cnoremap % %<CR>
@@ -107,8 +108,6 @@ map <Leader>i mmgg=G`m
 map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
-map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
-map <Leader>nt :e! ~/Dropbox/docs/trailmix/todo.md<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
 map <Leader>pn :sp ~/Dropbox/work/thoughtbot/notes/project-notes.md<cr>
@@ -275,7 +274,7 @@ function! MergeTabs()
     close!
     tabprev
   endif
-  split
+  vsplit
   execute "buffer " . bufferName
 endfunction
 
