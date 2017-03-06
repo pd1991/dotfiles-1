@@ -91,6 +91,8 @@ map <Leader>cu :Tabularize /\|<CR>
 map <Leader>co mmggVG"*y`m
 " map <Leader>cc :Rjcollection client/
 map <Leader>cj :Rjspec client/
+map <Leader>n :cn<cr>
+map <Leader>p :cp<cr>
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>ct :Rtemplate client/
@@ -109,7 +111,7 @@ map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
-map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
+map <Leader>ps :set paste<CR><esc>"*]p:set nopaste<cr>
 map <Leader>pn :sp ~/Dropbox/work/thoughtbot/notes/project-notes.md<cr>
 map <Leader>q :copen<cr><cr>
 map <Leader>ra :%s/
@@ -295,11 +297,11 @@ endfunction
 " Search for call sites for term (excluding its definition) and
 " load into the quickfix list.
 function! SearchForCallSites(term)
-  cexpr system('ag' . shellescape(a:term) . '\| grep -v def')
+  cexpr system('ag ' . shellescape(a:term) . '')
 endfunction
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
-" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 let g:ctrlp_match_window = 'min:4,max:999'
@@ -354,7 +356,7 @@ function! RenameFile()
     redraw!
   endif
 endfunction
-map <Leader>n :call RenameFile()<cr>
+map <Leader>r :call RenameFile()<cr>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
