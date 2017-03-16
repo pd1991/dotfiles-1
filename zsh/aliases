@@ -8,6 +8,8 @@ fi
 
 # codtheory stuff
 alias eba='cd ~/code/eba'
+alias ebabr=create_eba_branch
+alias ebagc=eba_git_commit
 alias bb='cd ~/code/eba_black_box'
 alias int='cd ~/code/eba_intake'
 alias tmuxeba="cd ~/code/eba && tmux new -s eba"
@@ -17,9 +19,10 @@ alias ebatoken='rake eba:api:generate_token'
 alias intoken='rake eba_intake:api:generate_token'
 alias tokens='eba && ebatoken && int && intoken'
 alias s='git checkout supplemental'
-alias env='vi .env'
 alias redis='brew services start redis'
 alias hos='sudo vi /etc/hosts'
+alias PUSH=push_branch
+alias rake='bundle exec rake'
 
 alias -g G='| grep'
 alias -g L='| less'
@@ -39,6 +42,8 @@ alias meriadl='~/code/meriad'
 alias d='cd ~/.dotfiles'
 alias meriad='cd ~/code/meriad'
 alias drop='cd ~/Dropbox'
+alias fsp='cd ~/code/fullstackpd'
+alias tmuxfsp='fsp && tmux new -s fsp'
 alias ga='git add'
 alias gf='git fetch'
 alias gbr='git checkout -b'

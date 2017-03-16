@@ -82,6 +82,7 @@ imap jj <esc>
 map <Leader>ac :sp app/controllers/application_controller.rb<cr>
 " vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>b :Gblame<cr>
+map <Leader>tw :set textwidth=999<cr>
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>

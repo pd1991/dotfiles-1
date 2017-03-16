@@ -7,6 +7,17 @@ function git_branch_name {
   echo "$val"
 }
 
+# Creates EBA-XXXX branch relating to Jira ticket
+function create_eba_branch {
+  git checkout -b EBA-$1
+}
+
+function push_branch {
+  branch=`git_branch_name`
+  echo 'git push origin' $branch:$branch
+  git push origin $branch:$branch
+}
+
 function git-done {
   branch=`git_branch_name`
   git checkout master && git merge $branch --ff-only && bundle install && prepdb && bin/rspec && git push && git-nuke $branch
@@ -39,6 +50,11 @@ function rrg {
 function take {
   mkdir $1
   cd $1
+}
+
+function eba_git_commit {
+  branch=`git_branch_name`
+  git commit -m "${branch} | $*"
 }
 
 # Allows commit message without typing quotes (can't have quotes in the commit msg though).
