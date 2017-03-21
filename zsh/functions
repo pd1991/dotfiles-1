@@ -12,10 +12,16 @@ function create_eba_branch {
   git checkout -b EBA-$1
 }
 
-function push_branch {
+function push_eba_branch {
   branch=`git_branch_name`
   echo 'git push origin' $branch:$branch
   git push origin $branch:$branch
+}
+
+function force_push_eba_branch {
+  branch=`git_branch_name`
+  echo 'git push -f origin' $branch:$branch
+  git push -f origin $branch:$branch
 }
 
 function git-done {
