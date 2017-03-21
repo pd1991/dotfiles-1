@@ -26,6 +26,7 @@ alias PUSHF=force_push_eba_branch
 alias rake='bundle exec rake'
 alias solar='rake sunspot:solr:start'
 alias ssolar='rake sunsport:solr:stop'
+alias egco=eba_git_checkout_branch
 
 alias -g G='| grep'
 alias -g L='| less'

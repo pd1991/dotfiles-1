@@ -24,6 +24,11 @@ function force_push_eba_branch {
   git push -f origin $branch:$branch
 }
 
+function eba_git_checkout_branch {
+  echo 'git checkout EBA-'$1
+  git checkout EBA-$1
+}
+
 function git-done {
   branch=`git_branch_name`
   git checkout master && git merge $branch --ff-only && bundle install && prepdb && bin/rspec && git push && git-nuke $branch
