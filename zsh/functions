@@ -15,26 +15,37 @@ function create_eba_branch {
 function push_eba_branch {
   branch=`git_branch_name`
   echo 'git push origin' $branch:$branch
+  sleep 2
   git push origin $branch:$branch
 }
 
 function force_push_eba_branch {
   branch=`git_branch_name`
   echo 'git push -f origin' $branch:$branch
+  sleep 3
   git push -f origin $branch:$branch
 }
 
 function ct_gmail { 
+  echo "Opening CodeTheory Gmail..."
+  sleep 1
   open "https://mail.google.com/mail/u/0/#inbox"
 }
 
 function eba_board {
-  open
-  "https://standard.atlassian.net/secure/RapidBoard.jspa?rapidView=41&quickFilter=1093"
+  echo "Opening EBA Board..."
+  sleep 1
+  open "https://standard.atlassian.net/secure/RapidBoard.jspa?rapidView=41&quickFilter=1093"
 }
 
 function eba_open {
+  echo "Opening issue EBA-"$1"..."
   open "https://standard.atlassian.net/browse/EBA-"$1
+}
+
+function eba_open_branch_issue {
+  branch=`git_branch_name`
+  open "https://standard.atlassian.net/browse/"$branch
 }
 
 function eba_git_checkout_branch {

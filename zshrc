@@ -43,4 +43,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export OCI_DIR=/opt/oracle/instantclient_12_1
 export SQLPATH=/opt/oracle/instantclient_12_1
 export ORACLE_HOME=/opt/oracle/instantclient_12_1
+export ORACLE_SYSTEM_PASSWORD=standard1
 export NLS_LANG=AMERICAN_AMERICA.UTF8
