@@ -2,7 +2,7 @@
 
 ## Installation
 
-  `git clone git://github.com/r00k/dotfiles ~/.dotfiles`  
+  `git clone https://github.com/pradyumna2905/dotfiles.git ~/.dotfiles`  
   `cd ~/.dotfiles`  
   `rake install`
 
