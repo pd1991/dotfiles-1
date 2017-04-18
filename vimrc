@@ -19,6 +19,7 @@ Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -28,6 +29,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
@@ -332,7 +335,7 @@ let g:CommandTMatchWindowAtTop=1
 set timeoutlen=500
 
 " Remove trailing whitespace on save for ruby files.
-au BufWritePre *.rb :%s/\s\+$//e
+" au BufWritePre *.rb :%s/\s\+$//e
 
 function! OpenFactoryFile()
   if filereadable("test/factories.rb")
