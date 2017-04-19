@@ -1,4 +1,5 @@
 # Forked and edited from Ben Orenstein's dot files
+This assumes that you have `zsh` installed. If not, install it from [here](https://github.com/robbyrussell/oh-my-zsh).
 
 ## Installation
 
