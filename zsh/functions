@@ -29,7 +29,7 @@ function force_push_eba_branch {
 function ct_gmail { 
   echo "Opening CodeTheory Gmail..."
   sleep 1
-  open "https://mail.google.com/mail/u/0/#inbox"
+  open "https://mail.google.com/mail/u/1/#inbox"
 }
 
 function eba_board {
