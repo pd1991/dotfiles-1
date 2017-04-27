@@ -1,5 +1,5 @@
 " ========================================================================
-" Vundle stuff
+" Vundle stuff - no clue
 " ========================================================================
 
 set nocompatible " Required by vundle
@@ -211,7 +211,6 @@ set laststatus=2  " Always show status line.
 set relativenumber
 set number
 set textwidth=79
-" set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set bg=light
@@ -222,6 +221,9 @@ set tags=./tags;
 
 " Use Silver Searcher instead of grep
 set grepprg=ag
+
+" Use interactive shell -- aliases from inside vim
+set shellcmdflag=-ic
 
 " Make the omnicomplete text readable
 highlight PmenuSel ctermfg=black

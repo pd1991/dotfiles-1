@@ -6,6 +6,10 @@ elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
 fi
 
+# Put temp stuff here
+alias rrt='noglob bundle exec rake preflight:validate_data:run'
+alias rake='noglob bundle exec rake'
+
 # codtheory stuff
 alias eba='cd ~/code/eba'
 alias ebabr=create_eba_branch
