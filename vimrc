@@ -222,9 +222,6 @@ set tags=./tags;
 " Use Silver Searcher instead of grep
 set grepprg=ag
 
-" Use interactive shell -- aliases from inside vim
-set shellcmdflag=-ic
-
 " Make the omnicomplete text readable
 highlight PmenuSel ctermfg=black
 
