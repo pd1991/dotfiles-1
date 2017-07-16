@@ -52,8 +52,6 @@ Plugin 'nanotech/jellybeans.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Use the colorscheme from above
-colorscheme jellybeans
 
 " ========================================================================
 " Ruby stuff
@@ -215,6 +213,9 @@ set gdefault " assume the /g flag on :s substitutions to replace all matches in 
 set autoindent " always set autoindenting on
 set bg=light
 set lazyredraw " Don't redraw screen when running macros.
+"
+" Use the colorscheme from above
+colorscheme jellybeans
 
 " Set the tag file search order
 set tags=./tags;
