@@ -25,6 +25,9 @@ source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
 source $HOME/.dotfiles/zsh/z
 
+# Source bashmarks
+source ~/.local/bin/bashmarks.sh
+
 # Add cabal bin
 export PATH=$PATH:~/.cabal/bin
 
@@ -45,3 +48,8 @@ export SQLPATH=/opt/oracle/instantclient_12_1
 export ORACLE_HOME=/opt/oracle/instantclient_12_1
 export ORACLE_SYSTEM_PASSWORD=standard1
 export NLS_LANG=AMERICAN_AMERICA.UTF8
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+
+# EBA
+export EBA_HOME=$HOME/code/eba
+export EBA_INTAKE_HOME=$HOME/code/eba_intake

@@ -27,10 +27,18 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-cucumber'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
+Plugin 'ianks/vim-tsx'
+
+" React
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+let g:javascript_plugin_flow = 1
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
@@ -97,6 +105,7 @@ map <Leader>n :cn<cr>
 map <Leader>p :cp<cr>
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
+map <Leader>cd :call SearchForDeclarationCursor()<CR>
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
 map <Leader>d Obinding.pry<esc>:w<cr>
@@ -105,9 +114,9 @@ map <Leader>dj :e ~/Dropbox/notes/debugging_journal.txt<cr>
 map <Leader>ec :e ~/code/
 map <Leader>gw :!git add . && git commit -m 'WIP'<cr>
 map <Leader>gl :e Gemfile.lock<cr>
-map <Leader>f :call OpenFactoryFile()<CR>
+" map <Leader>f :call OpenFactoryFile()<CR>
 map <Leader>fix :cnoremap % %<CR>
-map <Leader>fa :sp test/factories.rb<CR>
+" map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>i mmgg=G`m
 map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel
@@ -116,7 +125,7 @@ map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 map <Leader>ps :set paste<CR><esc>"*]p:set nopaste<cr>
 map <Leader>q :copen<cr><cr>
 map <Leader>ra :%s/
-map <Leader>rd :!bundle exec rspec % --format documentation<CR>
+map <Leader>rd :redraw!<cr>
 map <Leader>rs :vsp <C-r>#<cr><C-w>w
 map <Leader>rt q:?!ruby<cr><cr>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
@@ -146,6 +155,11 @@ map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <Leader>nh :noh<cr>
 map <Leader>s :Gstatus<cr>
+map <Leader>cf :w<cr>:! clear && cucumber %<cr>
+map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
+map <Leader>sc :setlocal spell spelllang=en_us<cr>
+map <Leader>ns :set nospell<cr>
+map <Leader>mm [<C-d>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -298,15 +312,29 @@ function! SearchForCallSitesCursor()
   call SearchForCallSites(searchTerm)
 endfunction
 
+function! SearchForDeclarationCursor()
+  let searchTerm = expand("<cword>")
+  call SearchForDeclaration(searchTerm)
+endfunction
+
 " Search for call sites for term (excluding its definition) and
 " load into the quickfix list.
 function! SearchForCallSites(term)
-  cexpr system('ag ' . shellescape(a:term) . '')
+  cexpr system('ag -w ' . shellescape(a:term) . '\| grep -v def')
+endfunction
+
+function! SearchForDeclaration(term)
+  let definition = 'def ' . a:term
+  cexpr system('ag -w ' . shellescape(definition))
 endfunction
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
+" let g:ctrlp_use_caching = 0
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'assets\|cache\|bundle'
+  \ }
 
 let g:ctrlp_match_window = 'min:4,max:999'
 

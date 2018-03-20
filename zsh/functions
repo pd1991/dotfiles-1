@@ -12,6 +12,10 @@ function create_eba_branch {
   git checkout -b EBA-$1
 }
 
+function create_pando_branch {
+  git checkout -b PAN-$1
+}
+
 function push_eba_branch {
   branch=`git_branch_name`
   echo 'git push origin' $branch:$branch
@@ -53,6 +57,11 @@ function eba_git_checkout_branch {
   git checkout EBA-$1
 }
 
+function pando_git_checkout_branch {
+  echo 'git checkout PAN-'$1
+  git checkout PAN-$3
+}
+
 function git-done {
   branch=`git_branch_name`
   git checkout master && git merge $branch --ff-only && bundle install && prepdb && bin/rspec && git push && git-nuke $branch
@@ -79,7 +88,7 @@ function g {
 }
 
 function rrg {
-  bin/rake routes | grep $1
+  bundle exec rake routes | grep $1
 }
 
 function take {

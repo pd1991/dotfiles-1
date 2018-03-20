@@ -22,11 +22,12 @@ alias tmuxbb="cd ~/code/eba_black_box && tmux new -s bb"
 alias ebatoken='bundle exec rake eba:api:generate_token'
 alias intoken='bundle exec rake eba_intake:api:generate_token'
 alias tokens='eba && ebatoken && int && intoken'
-alias s='git checkout supplemental'
 alias redis='brew services start redis'
 alias hos='sudo vi /etc/hosts'
 alias ebapush=push_eba_branch
+alias pushb=push_eba_branch
 alias ebapushf=force_push_eba_branch
+alias push!=force_push_eba_branch
 alias solar='rake sunspot:solr:start'
 alias ssolar='rake sunsport:solr:stop'
 alias ebagco=eba_git_checkout_branch
@@ -40,9 +41,9 @@ alias -g G='| grep'
 alias -g L='| less'
 alias -g M='| more'
 alias aliases='vim ~/.dotfiles/zsh/aliases'
-alias b='bin/rspec'
+alias b='bundle exec rspec'
 alias be='bundle exec'
-alias br='bin/rspec'
+alias br='bundle exec rspec'
 alias bsf='bin/rspec spec/features'
 alias bu='bundle update'
 alias bi='bundle install'
@@ -50,14 +51,10 @@ alias c='clear'
 alias code='cd ~/code/'
 alias work='cd ~/Dropbox/work'
 alias todo='vi ~/Dropbox/work/todo.txt'
-alias meriad='~/code/meriad'
-alias meraid='~/code/meriad'
-alias meriadl='~/code/meriad'
 alias d='cd ~/.dotfiles'
 alias meriad='cd ~/code/meriad'
 alias drop='cd ~/Dropbox'
 alias fsp='cd ~/code/fullstackpd'
-alias tmuxfsp='fsp && tmux new -s fsp'
 alias ga='git add'
 alias gf='git fetch'
 alias gbr='git checkout -b'
@@ -75,10 +72,7 @@ alias gcd="git commit -v"
 alias gco='git checkout'
 alias gd='git diff'
 alias gdm='git diff master'
-alias gds='git diff supplemental'
 alias gg='git lg'
-alias gp='git push'
-alias gpf='git push -f'
 alias gpr='git pull --rebase'
 alias gs='git status'
 alias gpush='echo "Use gp!" && git push'
@@ -105,7 +99,8 @@ alias routes="bin/rake routes"
 alias routesg="bin/rake routes | grep"
 alias routes='bin/rake routes'
 alias routesg='bin/rake routes | grep'
-alias rds='bundle exec rake db:reset db:seed'
+alias rds='bundle exec rake db:reset'
+alias rdss='bundle exec rake db:reset && RAILS_ENV=test rake db:seed'
 alias seed='bin/rake db:seed'
 alias rdtp="bin/rake db:test:prepare"
 alias reguard='killall -9 ruby ; guard'
@@ -118,14 +113,14 @@ alias restart_postgres="stoppostgres && startpostgres"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp * && coffeetags -R -f >> tags'
 alias review="git diff master"
-alias rs='bundle check && rails server -p 3000'
+alias rs='bundle check && rails server'
 alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
 alias sc='staging-console'
 alias sfh='cd ~/code/speaking-for-hackers-book'
 alias shpush='rake && hpush'
 alias so='source ~/.dotfiles/zsh/aliases'
 alias sof='source ~/.dotfiles/zsh/functions'
-alias sp='safepush'
+alias sp='spinach'
 alias squash='git rebase -i master'
 alias ss='spring stop'
 alias stage='git push staging head:master && staging open'
@@ -133,26 +128,20 @@ alias startpostgres='pg_ctl -D /usr/local/var/postgres9.4 -l /usr/local/var/post
 alias startredis='redis-server /usr/local/etc/redis.conf &'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres9.4 -l /usr/local/var/postgres9.4/server.log stop'
 alias sync='git add -u . && git commit -m "Minor changes. Commit message skipped." && repush'
-alias t='cd ~/code/trailmix'
 alias tail-logs='heroku logs -t'
 alias track='git checkout -t'
 alias trs='tmux rename-session'
 alias u='cd ..'
-alias undeployed='git fetch --multiple production origin && git log production/master..origin/master'
 alias v='vim'
 alias vi='vim'
-alias w='cd ~/code/upcase-exercises'
+alias cltmp='rm -rf ~/.tmp/*'
+
+# Pando
+alias tmuxpando="cd ~/code/pando && tmux new -s pan"
+alias pan='cd ~/code/pando ; tmuxpando'
+alias panbr=create_pando_branch
+alias pangco=pando_git_checkout_branch
 
 # Heroku staging
 alias staging-console='heroku run console --remote staging'
 alias staging-tail='heroku logs --tail --remote staging'
-
-# Heroku production
-alias production-console='heroku run console --remote production'
-alias production-tail='heroku logs --tail --remote production'
-
-# # Heroku databases
-
-alias db-pull-staging='development restore staging'
-alias db-pull-production='development restore production'
-alias db-copy-production-to-staging='staging restore production'
