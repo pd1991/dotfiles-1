@@ -160,6 +160,7 @@ map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
+map <Leader>ri gg=G
 
 " Go to tab by number
 noremap <leader>1 1gt
