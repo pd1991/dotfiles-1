@@ -25,9 +25,6 @@ source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
 source $HOME/.dotfiles/zsh/z
 
-# Source bashmarks
-source ~/.local/bin/bashmarks.sh
-
 # Add cabal bin
 export PATH=$PATH:~/.cabal/bin
 

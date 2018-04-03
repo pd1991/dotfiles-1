@@ -334,7 +334,7 @@ endfunction
 " let g:ctrlp_use_caching = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  'assets\|cache\|bundle'
+  \ 'dir':  'cache\|bundle'
   \ }
 
 let g:ctrlp_match_window = 'min:4,max:999'

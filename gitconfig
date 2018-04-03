@@ -35,3 +35,6 @@
         ff = only
 [fetch]
         prune = true
+[diff]
+        tool = vimdiff
+
