@@ -12,21 +12,16 @@ function create_eba_branch {
   git checkout -b EBA-$1
 }
 
-function create_pando_branch {
-  git checkout -b PAN-$1
-}
-
 function push_eba_branch {
   branch=`git_branch_name`
   echo 'git push origin' $branch:$branch
-  sleep 2
   git push origin $branch:$branch
 }
 
 function force_push_eba_branch {
   branch=`git_branch_name`
   echo 'git push -f origin' $branch:$branch
-  sleep 3
+  sleep 5
   git push -f origin $branch:$branch
 }
 
