@@ -48,5 +48,5 @@ export NLS_LANG=AMERICAN_AMERICA.UTF8
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 
 # EBA
-export EBA_HOME=$HOME/code/eba
-export EBA_INTAKE_HOME=$HOME/code/eba_intake
+export EBA_SRC_DIR=$HOME/code/eba
+export EBA_INTAKE_SRC_DIR=$HOME/code/eba_intake

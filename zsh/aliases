@@ -36,6 +36,7 @@ alias ctgmail=ct_gmail
 alias ebaboard=eba_board
 alias os='ebaboard ; ctgmail ; tmuxeba'
 alias obr=eba_open_branch_issue
+alias dab='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 alias -g G='| grep'
 alias -g L='| less'
@@ -113,7 +114,7 @@ alias restart_postgres="stoppostgres && startpostgres"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp * && coffeetags -R -f >> tags'
 alias review="git diff master"
-alias rs='bundle check && rails server'
+alias rs='./bin/rails server'
 alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
 alias sc='staging-console'
 alias sfh='cd ~/code/speaking-for-hackers-book'

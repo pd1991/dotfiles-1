@@ -40,3 +40,5 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[mergetool]
+	keepBackup = false
