@@ -32,7 +32,13 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
-Plugin 'ianks/vim-tsx'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Snippets
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'garbas/vim-snipmate'
 
 " React
 Plugin 'pangloss/vim-javascript'
@@ -248,7 +254,7 @@ set wildignore+=tmp/**
 highlight StatusLine ctermfg=blue ctermbg=yellow
 
 " Format xml files
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+" au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
@@ -334,8 +340,8 @@ endfunction
 " let g:ctrlp_use_caching = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  'cache\|bundle'
-  \ }
+      \ 'dir':  'cache\|bundle'
+      \ }
 
 let g:ctrlp_match_window = 'min:4,max:999'
 
