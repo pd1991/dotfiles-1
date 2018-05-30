@@ -111,7 +111,7 @@ map <Leader>n :cn<cr>
 map <Leader>p :cp<cr>
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
-map <Leader>cd :call SearchForDeclarationCursor()<CR>
+map <Leader>d :call SearchForDeclarationCursor()<CR>
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
 map <Leader>d Obinding.pry<esc>:w<cr>
@@ -128,7 +128,7 @@ map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
-map <Leader>ps :set paste<CR><esc>"*]p:set nopaste<cr>
+map <Leader>ps :set paste<CR><esc>"+p:set nopaste<cr>
 map <Leader>q :copen<cr><cr>
 map <Leader>ra :%s/
 map <Leader>rd :redraw!<cr>
@@ -185,6 +185,12 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 
+
+" Open tree of the current file's parent folder
+" Example:
+"   pwd: /code/my-proj/file.txt
+"   <Leader>fo will perform :e /code/my-proj
+map <Leader>fo :e <C-R>=escape(expand("%:p:h"),' ')<CR><CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
