@@ -111,19 +111,18 @@ map <Leader>n :cn<cr>
 map <Leader>p :cp<cr>
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
-map <Leader>d :call SearchForDeclarationCursor()<CR>
+map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
+map <Leader>cf :call SearchForRubyClassCursor()<CR>
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
 map <Leader>d Obinding.pry<esc>:w<cr>
 map <Leader>dr :e ~/Dropbox<cr>
-map <Leader>dj :e ~/Dropbox/notes/debugging_journal.txt<cr>
 map <Leader>ec :e ~/code/
 map <Leader>gw :!git add . && git commit -m 'WIP'<cr>
 map <Leader>gl :e Gemfile.lock<cr>
 " map <Leader>f :call OpenFactoryFile()<CR>
 map <Leader>fix :cnoremap % %<CR>
 " map <Leader>fa :sp test/factories.rb<CR>
-map <Leader>i mmgg=G`m
 map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
@@ -161,7 +160,6 @@ map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <Leader>nh :noh<cr>
 map <Leader>s :Gstatus<cr>
-map <Leader>cf :w<cr>:! clear && cucumber %<cr>
 map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
@@ -325,9 +323,14 @@ function! SearchForCallSitesCursor()
   call SearchForCallSites(searchTerm)
 endfunction
 
-function! SearchForDeclarationCursor()
+function! SearchForRubyMethodDeclarationCursor()
   let searchTerm = expand("<cword>")
   call SearchForDeclaration(searchTerm)
+endfunction
+
+function! SearchForRubyClassCursor()
+  let searchTerm = expand("<cword>")
+  call SearchForRubyClass(searchTerm)
 endfunction
 
 " Search for call sites for term (excluding its definition) and
@@ -341,12 +344,17 @@ function! SearchForDeclaration(term)
   cexpr system('ag -w ' . shellescape(definition))
 endfunction
 
+function! SearchForRubyClass(term)
+  let definition = 'class ' . a:term
+  cexpr system('ag -w ' . shellescape(definition))
+endfunction
+
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " let g:ctrlp_use_caching = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  'cache\|bundle'
+      \ 'dir':  'cache\|bundle\|node_modules'
       \ }
 
 let g:ctrlp_match_window = 'min:4,max:999'
