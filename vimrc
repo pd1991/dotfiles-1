@@ -44,6 +44,8 @@ Plugin 'plasticboy/vim-markdown'
 " React
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
+
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
