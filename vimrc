@@ -18,6 +18,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'keith/rspec.vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-dispatch'
@@ -65,6 +66,13 @@ Plugin 'nanotech/jellybeans.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" ========================================================================
+" For the sake of JS
+" ========================================================================
+" This sets working dir to the currently open dir. This helps autocomplete file
+" names while doing an `import` in JS.
+autocmd BufEnter * silent! lcd %:p:h
 
 
 " ========================================================================
