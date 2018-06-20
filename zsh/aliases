@@ -7,10 +7,8 @@ elif [[ $platform == 'Darwin' ]]; then
 fi
 
 # Put temp stuff here
-alias rrt='noglob bundle exec rake preflight:validate_data:run'
-alias rake='noglob bundle exec rake'
 
-# codtheory stuff
+# ClearStack stuff
 alias eba='cd ~/code/eba'
 alias ebabr=create_eba_branch
 alias ebagc=eba_git_commit
@@ -25,9 +23,7 @@ alias tokens='eba && ebatoken && int && intoken'
 alias redis='brew services start redis'
 alias hos='sudo vi /etc/hosts'
 alias ebapush='echo "Use pushb dude"'
-alias pushb=push_eba_branch
 alias ebapushf=force_push_eba_branch
-alias push!=force_push_eba_branch
 alias solar='rake sunspot:solr:start'
 alias ssolar='rake sunsport:solr:stop'
 alias ebagco=eba_git_checkout_branch
@@ -38,37 +34,19 @@ alias os='ebaboard ; ctgmail ; tmuxeba'
 alias obr=eba_open_branch_issue
 alias dab='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
-alias -g G='| grep'
-alias -g L='| less'
-alias -g M='| more'
-alias aliases='vim ~/.dotfiles/zsh/aliases'
-alias b='bundle exec rspec'
-alias be='bundle exec'
-alias br='bundle exec rspec'
-alias bsf='bin/rspec spec/features'
-alias bu='bundle update'
-alias bi='bundle install'
-alias c='clear'
-alias code='cd ~/code/'
-alias work='cd ~/Dropbox/work'
-alias todo='vi ~/Dropbox/work/todo.txt'
-alias d='cd ~/.dotfiles'
-alias meriad='cd ~/code/meriad'
-alias drop='cd ~/Dropbox'
-alias fsp='cd ~/code/fullstackpd'
+# Git stuff
+alias pushb=push_eba_branch
+alias push!=force_push_eba_branch
 alias ga='git add'
 alias gf='git fetch'
 alias gbr='git checkout -b'
 alias stas='git stash'
 alias gbrd='git branch -D'
-alias fs='bundle install && foreman start'
 alias gad='git add'
 alias gag='git add . && git commit --amend --no-edit && git push -f'
-alias gbc='gdc'
 alias gca='git commit -a'
 alias gcl='git clone'
 alias gcm="git commit -m"
-alias gc="git commit"
 alias gcd="git commit -v"
 alias gco='git checkout'
 alias gd='git diff'
@@ -76,73 +54,51 @@ alias gdm='git diff master'
 alias gg='git lg'
 alias gpr='git pull --rebase'
 alias gs='git status'
-alias gpush='echo "Use gp!" && git push'
 alias grc='git rebase --continue'
 alias gsh='git show'
 alias gs='git status'
 alias gcd='git commit -v'
-alias gurad='guard'
-alias hpush='git push heroku'
-alias irb='irb --readline -r irb/completion'
-alias js='jekyll serve & ; open http://127.0.0.1:4000'
-alias killruby='killall -9 ruby'
-alias killrudy='killruby'
 alias m='git checkout master'
-alias mastre='master'
-alias newblog='z blog ; rake new'
-alias newscreen="tmux"
-alias patch='git format-patch HEAD^ --stdout > patch.diff'
-alias pc='production-console'
-alias prepdb='dbprep'
+
+# Ruby/Rails
+alias b='bundle exec rspec'
+alias be='bundle exec'
+alias br='bundle exec rspec'
+alias bsf='bin/rspec spec/features'
+alias bu='bundle update'
+alias bi='bundle install'
+alias fs='bundle install && foreman start'
+alias gurad='guard'
+alias irb='irb --readline -r irb/completion'
+alias js='jekyll serve && open http://127.0.0.1:4000'
 alias rc='bin/rails console'
 alias rdm="bin/rake db:migrate"
 alias routes="bin/rake routes"
-alias routesg="bin/rake routes | grep"
-alias routes='bin/rake routes'
-alias routesg='bin/rake routes | grep'
 alias rds='bundle exec rake db:reset'
 alias rdss='bundle exec rake db:reset && RAILS_ENV=test rake db:seed'
 alias seed='bin/rake db:seed'
 alias rdtp="bin/rake db:test:prepare"
 alias reguard='killall -9 ruby ; guard'
-alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump && rake db:test:prepare'
-alias remore='!! | more'
-alias repush="gpr && git push"
-alias rerake='!! && rake'
-alias restart_apache="sudo /etc/init.d/apache2 restart"
-alias restart_postgres="stoppostgres && startpostgres"
-alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
-alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp * && coffeetags -R -f >> tags'
-alias review="git diff master"
 alias rs='./bin/rails server'
-alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
-alias sc='staging-console'
-alias sfh='cd ~/code/speaking-for-hackers-book'
-alias shpush='rake && hpush'
+alias ss='spring stop'
+
+alias -g G='| grep'
+alias -g L='| less'
+alias -g M='| more'
+alias aliases='vim ~/.dotfiles/zsh/aliases'
+alias c='clear'
+alias code='cd ~/code/'
+alias d='cd ~/.dotfiles'
+alias drop='cd ~/Dropbox'
 alias so='source ~/.dotfiles/zsh/aliases'
 alias sof='source ~/.dotfiles/zsh/functions'
-alias sp='spinach'
-alias squash='git rebase -i master'
-alias ss='spring stop'
-alias stage='git push staging head:master && staging open'
+alias restart_apache="sudo /etc/init.d/apache2 restart"
+alias restart_postgres="stoppostgres && startpostgres"
 alias startpostgres='pg_ctl -D /usr/local/var/postgres9.4 -l /usr/local/var/postgres9.4/server.log start'
 alias startredis='redis-server /usr/local/etc/redis.conf &'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres9.4 -l /usr/local/var/postgres9.4/server.log stop'
-alias sync='git add -u . && git commit -m "Minor changes. Commit message skipped." && repush'
-alias tail-logs='heroku logs -t'
-alias track='git checkout -t'
 alias trs='tmux rename-session'
 alias u='cd ..'
 alias v='vim'
 alias vi='vim'
-alias cltmp='rm -rf ~/.tmp/*'
-
-# Pando
-alias tmuxpando="cd ~/code/pando && tmux new -s pan"
-alias pan='cd ~/code/pando ; tmuxpando'
-alias panbr=create_pando_branch
-alias pangco=pando_git_checkout_branch
-
-# Heroku staging
-alias staging-console='heroku run console --remote staging'
-alias staging-tail='heroku logs --tail --remote staging'
+alias ctmp='rm -rf ~/.tmp/*'
