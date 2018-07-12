@@ -74,7 +74,7 @@ filetype plugin indent on    " required
 " ========================================================================
 " This sets working dir to the currently open dir. This helps autocomplete file
 " names while doing an `import` in JS.
-autocmd BufEnter * silent! lcd %:p:h
+" autocmd BufEnter * silent! lcd %:p:h
 
 
 " ========================================================================

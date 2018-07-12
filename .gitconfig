@@ -1,6 +1,6 @@
 [user]
-  name = Pradyumna
-  email = pradyumna2905@gmail.com
+	name = Pradyumna
+	email = pradyumna2905@gmail.com
 [alias]
   co = checkout
   cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
@@ -42,3 +42,8 @@
 	prompt = false
 [mergetool]
 	keepBackup = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

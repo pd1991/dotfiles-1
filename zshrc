@@ -50,3 +50,5 @@ export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 # EBA
 export EBA_SRC_DIR=$HOME/code/eba
 export EBA_INTAKE_SRC_DIR=$HOME/code/eba_intake
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
