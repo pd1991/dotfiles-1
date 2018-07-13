@@ -351,12 +351,17 @@ endfunction
 
 function! SearchForDeclaration(term)
   let definition = 'def ' . a:term
-  cexpr system('ag -w ' . shellescape(definition))
+  let class_definition = 'def self.' . a:term
+  let search = definition . '|' . class_definition
+  " echo search
+  cexpr system('ag -w ' . shellescape(search))
 endfunction
 
 function! SearchForRubyClass(term)
-  let definition = 'class ' . a:term
-  cexpr system('ag -w ' . shellescape(definition))
+  let class = 'class ' . a:term
+  let module = 'module ' . a:term
+  let search = class . '|' . module
+  cexpr system('ag -w ' . shellescape(search))
 endfunction
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
