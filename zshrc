@@ -35,6 +35,7 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
 source $HOME/.dotfiles/zsh/z
+source $HOME/.dotfiles/environment_variables
 
 # Add cabal bin
 export PATH=$PATH:~/.cabal/bin
@@ -50,17 +51,6 @@ export PATH=$PATH:$HOME/.dotfiles/bin
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# Oracle Client Libraries
-export OCI_DIR=/opt/oracle/instantclient_12_1
-export SQLPATH=/opt/oracle/instantclient_12_1
-export ORACLE_HOME=/opt/oracle/instantclient_12_1
-export ORACLE_SYSTEM_PASSWORD=standard1
-export NLS_LANG=AMERICAN_AMERICA.UTF8
-export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
-
-# EBA
-export EBA_SRC_DIR=$HOME/code/eba
-export EBA_INTAKE_SRC_DIR=$HOME/code/eba_intake
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"

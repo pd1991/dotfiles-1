@@ -25,7 +25,7 @@ function force_push_eba_branch {
   git push -f origin $branch:$branch
 }
 
-function ct_gmail { 
+function ct_gmail {
   echo "Opening CodeTheory Gmail..."
   sleep 1
   open "https://mail.google.com/mail/u/0/#inbox"
@@ -52,9 +52,9 @@ function eba_git_checkout_branch {
   git checkout EBA-$1
 }
 
-function pando_git_checkout_branch {
-  echo 'git checkout PAN-'$1
-  git checkout PAN-$3
+function q {
+  echo "Searching "$1""
+  open "https://www.google.com/search?q=${1// /+}"
 }
 
 function git-done {

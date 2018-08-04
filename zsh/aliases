@@ -102,3 +102,7 @@ alias u='cd ..'
 alias v='vim'
 alias vi='vim'
 alias ctmp='rm -rf ~/.tmp/*'
+alias ev='vi ~/.dotfiles/environment_variables'
+
+# Personal
+alias notes='vi ~/Documents/notes.md'
