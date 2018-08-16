@@ -35,6 +35,11 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'posva/vim-vue'
+Plugin 'alvan/vim-closetag'
+
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
 
 " Snippets
 " Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -45,6 +50,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
+
+let g:closetag_filenames = "*.html.erb,*.html,*.xhtml,*.phtml"
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
