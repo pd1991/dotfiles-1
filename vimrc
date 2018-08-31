@@ -39,6 +39,17 @@ Plugin 'posva/vim-vue'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_section_y = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+
+" Airline Tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
 " Elixir
 Plugin 'elixir-editors/vim-elixir'
 
