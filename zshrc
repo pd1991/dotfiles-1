@@ -34,7 +34,6 @@ stty stop undef
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
-source $HOME/.dotfiles/zsh/z
 source $HOME/.dotfiles/environment_variables
 
 # Add cabal bin
@@ -52,5 +51,7 @@ export PATH=$PATH:$HOME/.dotfiles/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"

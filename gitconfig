@@ -20,6 +20,7 @@
 
 [alias]
       lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	d = difftool
 [help]
 	autocorrect = 1
 [branch]
@@ -38,3 +39,5 @@
 [diff]
         tool = vimdiff
 
+[difftool]
+	prompt = false

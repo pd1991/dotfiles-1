@@ -9,14 +9,14 @@ fi
 # Put temp stuff here
 
 # ClearStack stuff
-alias eba='cd ~/code/eba'
+alias eba='cd ~/code/clearstack/eba'
 alias ebabr=create_eba_branch
 alias ebagc=eba_git_commit
-alias bb='cd ~/code/eba_black_box'
-alias int='cd ~/code/eba_intake'
-alias tmuxeba="cd ~/code/eba && tmux new -s eba"
-alias tmuxint="cd ~/code/eba_intake && tmux new -s intake"
-alias tmuxbb="cd ~/code/eba_black_box && tmux new -s bb"
+alias bb='cd ~/code/clearstack/eba_black_box'
+alias int='cd ~/code/clearstack/eba_intake'
+alias tmuxeba="eba && tmux new -s eba"
+alias tmuxint="eba_intake && tmux new -s intake"
+alias tmuxbb="eba_black_box && tmux new -s bb"
 alias ebatoken='bundle exec rake eba:api:generate_token'
 alias intoken='bundle exec rake eba_intake:api:generate_token'
 alias tokens='eba && ebatoken && int && intoken'
@@ -63,6 +63,7 @@ alias m='git checkout master'
 # Ruby/Rails
 alias b='bundle exec rspec'
 alias be='bundle exec'
+alias bo='EDITOR=vi bundle open'
 alias br='bundle exec rspec'
 alias bsf='bin/rspec spec/features'
 alias bu='bundle update'
@@ -106,3 +107,4 @@ alias ev='vi ~/.dotfiles/environment_variables'
 
 # Personal
 alias notes='vi ~/Documents/notes.md'
+alias osc='cd ~/code/open-source'
