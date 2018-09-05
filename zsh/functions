@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 function git-new-remote-tracking {
   git checkout -b $1 && git push -u origin $1
 }
@@ -101,6 +103,11 @@ function gc {
   git commit -m "$*"
 }
 
+# ssh into Clearstack's CI boxes.
+function cs_ci {
+  echo "SSH-ing into EBA.CI.KVM"$1
+  ssh csci -p '22'$1
+}
 
 function man() {
   env \
@@ -116,5 +123,4 @@ function man() {
     PATH="$HOME/bin:$PATH" \
       man "$@"
 }
-
 

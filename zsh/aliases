@@ -32,7 +32,7 @@ alias ctgmail=ct_gmail
 alias ebaboard=eba_board
 alias os='ebaboard ; ctgmail ; tmuxeba'
 alias obr=eba_open_branch_issue
-alias dab='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias csci=cs_ci
 
 # Git stuff
 alias pushb=push_eba_branch
@@ -59,6 +59,7 @@ alias gsh='git show'
 alias gs='git status'
 alias gcd='git commit -v'
 alias m='git checkout master'
+alias dab='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 # Ruby/Rails
 alias b='bundle exec rspec'
