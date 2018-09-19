@@ -31,7 +31,7 @@
 [rerere]
 	enabled = 1
 [github]
-	user = pradyumna2905
+	user = pd1991
 [merge]
         ff = only
 [fetch]

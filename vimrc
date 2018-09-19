@@ -47,8 +47,8 @@ let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
 " Airline Tabs
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Theme
 let g:airline_theme='minimalist'
