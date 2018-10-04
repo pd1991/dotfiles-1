@@ -38,6 +38,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'posva/vim-vue'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'jparise/vim-graphql'
 
 " Airline
 Plugin 'vim-airline/vim-airline'
