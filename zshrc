@@ -22,6 +22,11 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
+# Allow `[  ]` without having to escape
+# Example
+#   rake generate_random_number[100, 200]
+unsetopt nomatch
+
 # Enable completion
 autoload -U compinit
 compinit

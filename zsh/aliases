@@ -108,5 +108,6 @@ alias ctmp='rm -rf ~/.tmp/*'
 alias ev='vi ~/.dotfiles/environment_variables'
 
 # Personal
-alias notes='vi ~/Documents/notes.md'
+# alias notes='vi ~/Documents/notes.md'
 alias osc='cd ~/code/open-source'
+alias cat='bat'
