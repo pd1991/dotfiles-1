@@ -146,6 +146,7 @@ map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
 map <Leader>cf :call SearchForRubyClassCursor()<CR>
+map <Leader>sa :call SearchPatternAccrossProject()<CR>
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
 map <Leader>d Obinding.pry<esc>:w<cr>
@@ -389,6 +390,11 @@ function! SearchForCallSites(term)
   cexpr system('ag -w ' . shellescape(a:term) . '\| grep -v def')
 endfunction
 
+function! SearchPatternAccrossProject()
+  let searchTerm = expand("<cword>")
+  cexpr system('ag -w ' . shellescape(searchTerm))
+endfunction
+
 function! SearchForDeclaration(term)
   let definition = 'def ' . a:term
   let class_definition = 'def self.' . a:term
@@ -507,6 +513,11 @@ endfunction
 if has("autocmd")
   autocmd VimEnter * :call SetupCtrlP()
 endif
+
+command! Path :call EchoPath()
+function! EchoPath()
+  echo join(split(&path, ','), "\n")
+endfunction
 
 " ========================================================================
 " End of things set by me.
