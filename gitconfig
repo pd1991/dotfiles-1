@@ -1,5 +1,5 @@
 [user]
-	name = Pradyumna
+	name = Pradyumna Shembekar
 	email = pradyumna2905@gmail.com
 [alias]
 	co = checkout
@@ -41,3 +41,8 @@
 
 [difftool]
 	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

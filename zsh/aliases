@@ -73,7 +73,7 @@ alias bi='bundle install'
 alias fs='bundle install && foreman start'
 alias gurad='guard'
 alias irb='irb --readline -r irb/completion'
-alias js='jekyll serve && open http://127.0.0.1:4000'
+alias js='jekyll serve'
 alias rc='bin/rails console'
 alias rdm="bin/rake db:migrate"
 alias routes="bin/rake routes"
@@ -111,3 +111,9 @@ alias ev='vi ~/.dotfiles/environment_variables'
 # alias notes='vi ~/Documents/notes.md'
 alias osc='cd ~/code/open-source'
 alias cat='bat'
+
+# Balance
+alias bal='cd ~/Dropbox/Balance'
+alias balr='cd ~/Dropbox/Balance/balance'
+alias balm='cd ~/Dropbox/Balance/balance_mktg'
+alias balb='cd ~/Dropbox/Balance/balance_blog'
