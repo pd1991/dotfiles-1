@@ -36,7 +36,7 @@ function ct_gmail {
 function eba_board {
   echo "Opening EBA Board..."
   sleep 1
-  open "https://standard.atlassian.net/secure/RapidBoard.jspa?rapidView=41&quickFilter=1093"
+  open "https://standard.atlassian.net/secure/RapidBoard.jspa?rapidView=679&assignee=Pradyumna%40clearstack.io"
 }
 
 function eba_open {
