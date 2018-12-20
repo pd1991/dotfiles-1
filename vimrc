@@ -192,7 +192,7 @@ map <Leader>vm :Vmodel<cr>
 map <Leader>vv :Vview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
-map <Leader>nh :noh<cr>
+map <Leader>nn :noh<cr>
 map <Leader>s :Gstatus<cr>
 map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
@@ -228,6 +228,7 @@ map <Leader>fo :e <C-R>=escape(expand("%:p:h"),' ')<CR><CR>
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 " map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+map <Leader>h :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 map <C-h> :nohl<cr>
 imap <C-l> :<Space>
@@ -426,8 +427,8 @@ let g:ctrlp_match_window = 'min:4,max:999'
 
 "Now using thoughtbot/vim-rspec and tpope/dispatch.
 
-let g:rspec_command = '!clear && bin/rspec {spec}'
-" let g:rspec_command = 'Dispatch rspec {spec}'
+" let g:rspec_command = '!clear && bin/rspec {spec}'
+let g:rspec_command = 'Dispatch rspec {spec}'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
