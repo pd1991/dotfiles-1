@@ -110,10 +110,13 @@ alias ev='vi ~/.dotfiles/environment_variables'
 # Personal
 # alias notes='vi ~/Documents/notes.md'
 alias osc='cd ~/code/open-source'
-alias cat='bat'
 
 # Balance
 alias bal='cd ~/Dropbox/Balance'
 alias balr='cd ~/Dropbox/Balance/balance'
 alias balm='cd ~/Dropbox/Balance/balance_mktg'
 alias balb='cd ~/Dropbox/Balance/balance_blog'
+
+# Docker
+alias dc='docker-compose'
+alias dcu='docker-compose up'
