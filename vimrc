@@ -164,7 +164,9 @@ map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
-map <Leader>ps :set paste<CR><esc>"+p:set nopaste<cr>
+map <Leader>ps :set paste<CR><esc>i
+map <Leader>px :set paste<CR><esc>
+map <Leader>pn :echo 'Use <Leader>px'<cr>
 map <Leader>q :copen<cr><cr>
 map <Leader>ra :%s/
 map <Leader>rd :redraw!<cr>
