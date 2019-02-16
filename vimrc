@@ -89,6 +89,7 @@ let g:elm_setup_keybindings = 0 " Get the fuck out of my bindings
 
 " Colors
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 
 " All of your Plugins must be added before the following line
@@ -294,11 +295,12 @@ set number
 set textwidth=79
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
-set bg=light
+set bg=dark
 set lazyredraw " Don't redraw screen when running macros.
 "
 " Use the colorscheme from above
-colorscheme jellybeans
+colorscheme solarized
+call togglebg#map("<F5>")
 
 " Set the tag file search order
 set tags=./tags;
