@@ -33,6 +33,7 @@ alias ebaboard=eba_board
 alias os='ebaboard ; ctgmail ; tmuxeba'
 alias obr=eba_open_branch_issue
 alias csci=cs_ci
+alias wtd='vi ~/Dropbox/todos/work_todo.md'
 
 # Git stuff
 alias pushb=push_eba_branch

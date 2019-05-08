@@ -109,6 +109,8 @@ filetype plugin indent on    " required
 " ========================================================================
 syntax on                 " Enable syntax highlighting
 
+autocmd VimEnter * unmap <silent><expr> co
+
 augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
@@ -445,6 +447,7 @@ inoremap <Tab> <C-P>
 " Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
+
 
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
