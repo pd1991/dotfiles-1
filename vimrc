@@ -438,7 +438,7 @@ let g:ctrlp_match_window = 'min:4,max:999'
 "Now using thoughtbot/vim-rspec and tpope/dispatch.
 
 " let g:rspec_command = '!clear && bin/rspec {spec}'
-let g:rspec_command = 'Dispatch rspec {spec}'
+let g:rspec_command = 'Dispatch bin/rspec {spec}'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

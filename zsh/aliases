@@ -64,10 +64,9 @@ alias m='git checkout master'
 alias dab='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 # Ruby/Rails
-alias b='bundle exec rspec'
+alias t='bundle exec rspec'
 alias be='bundle exec'
 alias bo='EDITOR=vi bundle open'
-alias br='bundle exec rspec'
 alias bsf='bin/rspec spec/features'
 alias bu='bundle update'
 alias bi='bundle install'
