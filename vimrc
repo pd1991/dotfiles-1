@@ -39,7 +39,7 @@ Plugin 'posva/vim-vue'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jparise/vim-graphql'
-Plugin 'ap/vim-css-color'
+" Plugin 'ap/vim-css-color'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ekalinin/Dockerfile.vim'
 
