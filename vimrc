@@ -91,6 +91,11 @@ let g:elm_setup_keybindings = 0 " Get the fuck out of my bindings
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'altercation/vim-colors-solarized'
 
+" Folds
+" https://github.com/vim-utils/vim-ruby-fold/issues/4
+set foldlevelstart=99
+let g:ruby_fold = 1
+let ruby_foldable_groups = 'def'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -207,6 +212,12 @@ map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
 map <Leader>ri gg=G<C-o><C-o><esc>:w<cr>
+
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
+map <Leader>fa zM
+map <Leader>fs zR
 
 " Go to tab by number
 noremap <leader>1 1gt
