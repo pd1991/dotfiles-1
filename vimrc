@@ -95,7 +95,7 @@ Plugin 'altercation/vim-colors-solarized'
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
 set foldlevelstart=99
 let g:ruby_fold = 1
-let ruby_foldable_groups = 'def'
+let ruby_foldable_groups = 'def do'
 
 "https://bitbucket.org/sjl/dotfiles/src/8ac890f099a0ca970cd9cc90635264e95cb1a8be/vim/vimrc?at=default&fileviewer=file-view-default
 function! MyFoldText() " {{{
