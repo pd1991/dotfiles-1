@@ -55,4 +55,3 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
-eval "$(rbenv init -)"
