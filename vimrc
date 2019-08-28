@@ -30,7 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-cucumber'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'godlygeek/tabular'
@@ -39,9 +39,17 @@ Plugin 'posva/vim-vue'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jparise/vim-graphql'
-" Plugin 'ap/vim-css-color'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ekalinin/Dockerfile.vim'
+
+Plugin 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf
+map <C-p> :Files<CR>
+
+" Multicursor ftw
+Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'tpope/vim-eunuch'
 
 " Airline
 Plugin 'vim-airline/vim-airline'
@@ -93,27 +101,27 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
-set foldlevelstart=99
-let g:ruby_fold = 1
-let ruby_foldable_groups = 'def'
-
-"https://bitbucket.org/sjl/dotfiles/src/8ac890f099a0ca970cd9cc90635264e95cb1a8be/vim/vimrc?at=default&fileviewer=file-view-default
-function! MyFoldText() " {{{
-    let line = getline(v:foldstart)
-
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
-
-    " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
-
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction " }}}
-set foldtext=MyFoldText()
+" set foldlevelstart=99
+" let g:ruby_fold = 1
+" let ruby_foldable_groups = 'def do'
+"
+" "https://bitbucket.org/sjl/dotfiles/src/8ac890f099a0ca970cd9cc90635264e95cb1a8be/vim/vimrc?at=default&fileviewer=file-view-default
+" function! MyFoldText() " {{{
+"     let line = getline(v:foldstart)
+"
+"     let nucolwidth = &fdc + &number * &numberwidth
+"     let windowwidth = winwidth(0) - nucolwidth - 3
+"     let foldedlinecount = v:foldend - v:foldstart
+"
+"     " expand tabs into spaces
+"     let onetab = strpart('          ', 0, &tabstop)
+"     let line = substitute(line, '\t', onetab, 'g')
+"
+"     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+"     let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+"     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+" endfunction " }}}
+" set foldtext=MyFoldText()
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -453,12 +461,12 @@ endfunction
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " let g:ctrlp_use_caching = 0
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  'cache\|bundle\|node_modules'
-      \ }
-
-let g:ctrlp_match_window = 'min:4,max:999'
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" let g:ctrlp_custom_ignore = {
+"       \ 'dir':  'cache\|bundle\|node_modules'
+"       \ }
+"
+" let g:ctrlp_match_window = 'min:4,max:999'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
@@ -542,18 +550,18 @@ highlight ColorColumn ctermbg=235
 
 " CtrlP auto cache clearing.
 " ----------------------------------------------------------------------------
-function! SetupCtrlP()
-  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
-    augroup CtrlPExtension
-      autocmd!
-      autocmd FocusGained  * CtrlPClearCache
-      autocmd BufWritePost * CtrlPClearCache
-    augroup END
-  endif
-endfunction
-if has("autocmd")
-  autocmd VimEnter * :call SetupCtrlP()
-endif
+" function! SetupCtrlP()
+"   if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+"     augroup CtrlPExtension
+"       autocmd!
+"       autocmd FocusGained  * CtrlPClearCache
+"       autocmd BufWritePost * CtrlPClearCache
+"     augroup END
+"   endif
+" endfunction
+" if has("autocmd")
+"   autocmd VimEnter * :call SetupCtrlP()
+" endif
 
 command! Path :call EchoPath()
 function! EchoPath()

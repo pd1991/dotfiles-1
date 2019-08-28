@@ -24,8 +24,8 @@ alias redis='brew services start redis'
 alias hos='sudo vi /etc/hosts'
 alias ebapush='echo "Use pushb dude"'
 alias ebapushf=force_push_eba_branch
-alias solar='rake sunspot:solr:start'
-alias ssolar='rake sunsport:solr:stop'
+alias solar='bundle exec rake sunspot:solr:start'
+alias ssolar='bundle exec rake sunsport:solr:stop'
 alias ebagco=eba_git_checkout_branch
 alias eo=eba_open
 alias ctgmail=ct_gmail
@@ -33,6 +33,7 @@ alias ebaboard=eba_board
 alias os='ebaboard ; ctgmail ; tmuxeba'
 alias obr=eba_open_branch_issue
 alias csci=cs_ci
+alias notes='cd ~/Dropbox/notes'
 alias wlg='vi ~/Dropbox/notes/worklog.md'
 
 # Git stuff
