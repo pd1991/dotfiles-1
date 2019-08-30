@@ -51,6 +51,9 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'tpope/vim-eunuch'
 
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
+
 " Airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -164,7 +167,6 @@ runtime macros/matchit.vim
 let mapleader = ","
 
 imap jj <esc>
-map <Leader>ac :sp app/controllers/application_controller.rb<cr>
 " vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>b :Gblame<cr>
 map <Leader>tw :set textwidth=999<cr>
@@ -195,7 +197,6 @@ map <Leader>gl :e Gemfile.lock<cr>
 map <Leader>fix :cnoremap % %<CR>
 " map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
-map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 map <Leader>ps :set paste<CR><esc>i
@@ -238,6 +239,8 @@ map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
 map <Leader>ri gg=G<C-o><C-o><esc>:w<cr>
+map <Leader>a :NERDTreeToggle<CR>
+noremap <silent> <leader>m :NERDTreeFind<cr>
 
 " Folding
 nnoremap <Space> za
