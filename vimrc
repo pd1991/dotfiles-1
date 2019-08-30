@@ -140,8 +140,6 @@ filetype plugin indent on    " required
 " ========================================================================
 syntax on                 " Enable syntax highlighting
 
-autocmd VimEnter * unmap <silent><expr> co
-
 augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
@@ -237,7 +235,11 @@ map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
-map <Leader>ri gg=G<C-o><C-o><esc>:w<cr>
+
+function! FormatFile()
+  normal! mmgg=G`m^
+endfunction
+nnoremap <Leader>ri FormatFile()<esc>:w<cr>
 
 " Folding
 nnoremap <Space> za
