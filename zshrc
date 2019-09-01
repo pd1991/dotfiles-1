@@ -34,7 +34,9 @@ stty stop undef
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
-source $HOME/.dotfiles/environment_variables
+
+# courtesy: https://www.lambrospetrou.com/articles/export-environment-variables-multiple-files-linux-bash/
+source <(find $HOME/Dropbox/Personal/env_vars/ -type f -exec sed -E -n 's/[^#]+/export &/ p' {} +)
 
 # Add cabal bin
 export PATH=$PATH:~/.cabal/bin

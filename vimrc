@@ -30,7 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-cucumber'
 Plugin 'vim-ruby/vim-ruby'
-" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'godlygeek/tabular'
@@ -42,9 +42,9 @@ Plugin 'jparise/vim-graphql'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ekalinin/Dockerfile.vim'
 
-Plugin 'junegunn/fzf.vim'
-set rtp+=/usr/local/opt/fzf
-map <C-p> :Files<CR>
+" Plugin 'junegunn/fzf.vim'
+" set rtp+=/usr/local/opt/fzf
+" map <C-p> :Files<CR>
 
 " Multicursor ftw
 Plugin 'terryma/vim-multiple-cursors'
@@ -464,14 +464,14 @@ function! SearchForRubyClass(term)
 endfunction
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
-" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" let g:ctrlp_use_caching = 0
-" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-" let g:ctrlp_custom_ignore = {
-"       \ 'dir':  'cache\|bundle\|node_modules'
-"       \ }
-"
-" let g:ctrlp_match_window = 'min:4,max:999'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  'cache\|bundle\|node_modules'
+      \ }
+
+let g:ctrlp_match_window = 'min:4,max:999'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff

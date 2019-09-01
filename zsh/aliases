@@ -106,7 +106,8 @@ alias u='cd ..'
 alias v='vim'
 alias vi='vim'
 alias ctmp='rm -rf ~/.tmp/*'
-alias ev='vi ~/.dotfiles/environment_variables'
+alias ev='cd ~/Dropbox/Personal/env_vars'
+alias mac="code && vi laptop/mac"
 
 # Personal
 # alias notes='vi ~/Documents/notes.md'
