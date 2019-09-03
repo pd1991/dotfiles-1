@@ -51,9 +51,6 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'tpope/vim-eunuch'
 
-" Nerdtree
-Plugin 'scrooloose/nerdtree'
-
 " Airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'

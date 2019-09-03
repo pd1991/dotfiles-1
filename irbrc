@@ -16,7 +16,7 @@ class Object
   end
 
   def me
-    User.find_by_email 'pradyumna@balancehq.app' ||
-      User.find_by_email 'pradyumna2905@gmail.com'
+    User.find_by_email('pradyumna@balancehq.app').presence ||
+      User.find_by_email('pradyumna2905@gmail.com').presence
   end
 end
