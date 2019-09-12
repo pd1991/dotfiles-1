@@ -195,7 +195,7 @@ map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 map <Leader>ps :set paste<CR><esc>i
-map <Leader>px :set paste<CR><esc>
+map <Leader>px :set nopaste<CR><esc>
 map <Leader>pn :echo 'Use <Leader>px'<cr>
 map <Leader>q :copen<cr><cr>
 map <Leader>ra :%s/
@@ -237,7 +237,7 @@ map <Leader>a :NERDTreeToggle<CR>
 noremap <silent> <leader>m :NERDTreeFind<cr>
 
 function! FormatFile()
-  normal! mmgg=G`m^
+  normal! mmgg=G`m
 endfunction
 nnoremap <Leader>ri FormatFile()<esc>:w<cr>
 
@@ -340,7 +340,8 @@ set bg=dark
 set lazyredraw " Don't redraw screen when running macros.
 "
 " Use the colorscheme from above
-colorscheme solarized
+" colorscheme solarized
+colorscheme jellybeans
 call togglebg#map("<F5>")
 
 " Set the tag file search order
