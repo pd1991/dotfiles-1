@@ -241,6 +241,13 @@ function! FormatFile()
 endfunction
 nnoremap <Leader>ri FormatFile()<esc>:w<cr>
 
+" RSpec let to vars
+" Only supports inline let
+map <Leader>ta mmdt:xf)xa=<esc>f{x$xx<esc>:w<cr>`m<esc>
+" RSpec let to vars
+" Only supports one-line block lets
+map <Leader>td dt:xf)Da<Space>=<esc>Jjdd<esc>:w<cr>
+
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
@@ -262,7 +269,6 @@ noremap <leader>0 :tablast<cr>
 " Remapping vim and tmux windows
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
-
 
 
 " Open tree of the current file's parent folder
