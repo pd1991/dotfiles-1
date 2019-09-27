@@ -34,7 +34,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'posva/vim-vue'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
@@ -371,6 +370,9 @@ highlight StatusLine ctermfg=blue ctermbg=yellow
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
 set nofoldenable " Say no to code folding...
+
+" Weird issue. Hack for now
+set maxmempattern=100000
 
 command! Q q " Bind :Q to :q
 command! Qall qall
