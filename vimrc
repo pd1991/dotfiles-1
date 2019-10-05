@@ -30,7 +30,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-cucumber'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'godlygeek/tabular'
@@ -41,9 +40,11 @@ Plugin 'jparise/vim-graphql'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ekalinin/Dockerfile.vim'
 
-" Plugin 'junegunn/fzf.vim'
-" set rtp+=/usr/local/opt/fzf
-" map <C-p> :Files<CR>
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plugin 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf
+map <silent><C-p> :FZF<CR>
+map ; :Files<CR>
 
 " Multicursor ftw
 Plugin 'terryma/vim-multiple-cursors'
@@ -97,6 +98,12 @@ let g:elm_setup_keybindings = 0 " Get the fuck out of my bindings
 " Colors
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'altercation/vim-colors-solarized'
+
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" Closes vim if only Nerdtree window is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
@@ -187,9 +194,6 @@ map <Leader>dr :e ~/Dropbox<cr>
 map <Leader>ec :e ~/code/
 map <Leader>gw :!git add . && git commit -m 'WIP'<cr>
 map <Leader>gl :e Gemfile.lock<cr>
-" map <Leader>f :call OpenFactoryFile()<CR>
-map <Leader>fix :cnoremap % %<CR>
-" map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
@@ -227,13 +231,12 @@ map <Leader>vv :Vview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <Leader>nn :noh<cr>
-map <Leader>s :Gstatus<cr>
 map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
-map <Leader>a :NERDTreeToggle<CR>
-noremap <silent> <leader>m :NERDTreeFind<cr>
+noremap <silent><Leader>a :NERDTreeToggle<CR>
+noremap <silent> <leader>f :NERDTreeFind<cr>
 
 function! FormatFile()
   normal! mmgg=G`m
@@ -250,8 +253,6 @@ map <Leader>td dt:xf)Da<Space>=<esc>Jjdd<esc>:w<cr>
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
-map <Leader>fa zM
-map <Leader>fs zR
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -273,8 +274,6 @@ nnoremap <leader>= :wincmd =<cr>
 " Open tree of the current file's parent folder
 " Example:
 "   pwd: /code/my-proj/file.txt
-"   <Leader>fo will perform :e /code/my-proj
-map <Leader>fo :e <C-R>=escape(expand("%:p:h"),' ')<CR><CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
@@ -470,14 +469,14 @@ function! SearchForRubyClass(term)
 endfunction
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  'cache\|bundle\|node_modules'
-      \ }
-
-let g:ctrlp_match_window = 'min:4,max:999'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_use_caching = 0
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" let g:ctrlp_custom_ignore = {
+"       \ 'dir':  'cache\|bundle\|node_modules'
+"       \ }
+"
+" let g:ctrlp_match_window = 'min:4,max:999'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
