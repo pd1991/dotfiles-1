@@ -39,7 +39,7 @@ function eba_board {
   open "https://standard.atlassian.net/secure/RapidBoard.jspa?rapidView=679&assignee=Pradyumna%40clearstack.io"
 }
 
-function eba_open {
+function jira {
   echo "Opening issue EBA-"$1"..."
   open "https://standard.atlassian.net/browse/EBA-"$1
 }
