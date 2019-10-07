@@ -107,6 +107,20 @@ let g:NERDTreeWinPos = "right"
 " Closes vim if only Nerdtree window is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "•",
+    \ "Staged"    : "•",
+    \ "Untracked" : "+",
+    \ "Renamed"   : "→",
+    \ "Unmerged"  : "-",
+    \ "Deleted"   : "x",
+    \ "Dirty"     : "x",
+    \ "Clean"     : "✔",
+    \ 'Ignored'   : '-',
+    \ "Unknown"   : "?"
+    \ }
+
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
 " set foldlevelstart=99
