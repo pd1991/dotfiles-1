@@ -101,6 +101,8 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
+" Open on right
+let g:NERDTreeWinPos = "right"
 
 " Closes vim if only Nerdtree window is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -194,7 +196,6 @@ map <Leader>dr :e ~/Dropbox<cr>
 map <Leader>ec :e ~/code/
 map <Leader>gw :!git add . && git commit -m 'WIP'<cr>
 map <Leader>gl :e Gemfile.lock<cr>
-map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>mf mmgqap`m:w<cr>
 map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 map <Leader>ps :set paste<CR><esc>i
@@ -235,7 +236,7 @@ map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
-noremap <silent><Leader>a :NERDTreeToggle<CR>
+noremap <silent><Leader>l :NERDTreeToggle<CR>
 noremap <silent> <leader>f :NERDTreeFind<cr>
 
 function! FormatFile()
@@ -349,7 +350,8 @@ colorscheme jellybeans
 call togglebg#map("<F5>")
 
 " Set the tag file search order
-set tags=./tags;
+" set tags=./tags;
+set tags^=./.git/tags;
 
 " Use Silver Searcher instead of grep
 set grepprg=ag
