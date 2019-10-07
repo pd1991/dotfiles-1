@@ -389,12 +389,16 @@ set nofoldenable " Say no to code folding...
 " Weird issue. Hack for now
 set maxmempattern=100000
 
+" Makes `y` and `p` work with global buffers.
+set clipboard+=unnamed
+
 command! Q q " Bind :Q to :q
 command! Qall qall
 command! QA qall
 command! E e
 command! W w
 command! Wq wq
+command! WQ wq
 
 
 " Execute macro in q
