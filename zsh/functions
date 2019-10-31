@@ -9,6 +9,12 @@ function git_branch_name {
   echo "$val"
 }
 
+function pull_branch {
+  branch=`git_branch_name`
+  echo 'git pull origin' $branch
+  git pull origin $branch
+}
+
 # Creates EBA-XXXX branch relating to Jira ticket
 function create_eba_branch {
   git checkout -b EBA-$1
