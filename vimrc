@@ -366,8 +366,8 @@ set bg=dark
 set lazyredraw " Don't redraw screen when running macros.
 "
 " Use the colorscheme from above
-" colorscheme solarized
-colorscheme jellybeans
+colorscheme solarized
+" colorscheme jellybeans
 call togglebg#map("<F5>")
 
 " Set the tag file search order
