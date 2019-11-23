@@ -44,7 +44,6 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plugin 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
 map <silent><C-p> :FZF<CR>
-map ; :Files<CR>
 
 " Multicursor ftw
 Plugin 'terryma/vim-multiple-cursors'
@@ -103,6 +102,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 " Open on right
 let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden = 1
 
 " Closes vim if only Nerdtree window is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -258,6 +258,7 @@ map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
 noremap <silent><Leader>l :NERDTreeToggle<CR>
+noremap <silent><Leader>a :NERDTreeToggle<CR>
 noremap <silent> <leader>f :NERDTreeFind<cr>
 
 function! FormatFile()
