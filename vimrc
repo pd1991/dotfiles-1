@@ -209,7 +209,7 @@ map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
 map <Leader>cf :call SearchForRubyClassCursor()<CR>
-map <Leader>sa :call SearchPatternAccrossProject()<CR>
+nnoremap <silent> <Leader>sa :Ag <C-R><C-W><CR>
 map <Leader>s :Ag 
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
@@ -475,11 +475,6 @@ endfunction
 " load into the quickfix list.
 function! SearchForCallSites(term)
   cexpr system('ag -w ' . shellescape(a:term) . '\| grep -v def')
-endfunction
-
-function! SearchPatternAccrossProject()
-  let searchTerm = expand("<cword>")
-  cexpr system('ag -w ' . shellescape(searchTerm))
 endfunction
 
 function! SearchForDeclaration(term)
