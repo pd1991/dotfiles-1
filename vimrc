@@ -210,6 +210,7 @@ map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
 map <Leader>cf :call SearchForRubyClassCursor()<CR>
 map <Leader>sa :call SearchPatternAccrossProject()<CR>
+map <Leader>s :Ag 
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
 map <Leader>d Obinding.pry<esc>:w<cr>
