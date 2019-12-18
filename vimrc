@@ -203,13 +203,14 @@ map <Leader>cu :Tabularize /\|<CR>
 map <Leader>co mmggVG"*y`m
 " map <Leader>cc :Rjcollection client/
 map <Leader>cj :Rjspec client/
-map <Leader>n :cn<cr>
-map <Leader>p :cp<cr>
+map <Leader>n :tn<cr>
+map <Leader>p :tp<cr>
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
 map <Leader>cf :call SearchForRubyClassCursor()<CR>
 nnoremap <silent> <Leader>sa :Ag <C-R><C-W><CR>
+map <Leader>g :Gstatus<cr>
 map <Leader>s :Ag 
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
