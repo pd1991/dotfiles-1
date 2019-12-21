@@ -259,6 +259,7 @@ map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
+map <Leader>c ctagg<cr>
 noremap <silent><Leader>l :NERDTreeToggle<CR>
 noremap <silent><Leader>a :NERDTreeToggle<CR>
 noremap <silent> <leader>f :NERDTreeFind<cr>
