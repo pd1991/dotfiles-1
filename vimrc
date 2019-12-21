@@ -365,13 +365,15 @@ set number
 set textwidth=79
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
-set bg=dark
 set lazyredraw " Don't redraw screen when running macros.
 "
 " Use the colorscheme from above
-colorscheme solarized
-" colorscheme jellybeans
-call togglebg#map("<F5>")
+" colorscheme solarized
+" call togglebg#map("<F5>")
+colorscheme jellybeans
+let g:jellybeans_overrides = {
+\  'background': { 'guibg': '212121'  },
+\}
 
 " Set the tag file search order
 " set tags=./tags;
