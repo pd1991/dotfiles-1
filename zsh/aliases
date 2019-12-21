@@ -112,6 +112,7 @@ alias vi='vim'
 alias ctmp='rm -rf ~/.tmp/*'
 alias ev='cd ~/Dropbox/Personal/env_vars'
 alias mac="code && vi laptop/mac"
+alias ctags="`brew --prefix`/bin/ctags"
 
 # Personal
 # alias notes='vi ~/Documents/notes.md'
