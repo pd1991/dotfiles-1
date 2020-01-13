@@ -77,7 +77,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 
-let g:closetag_filenames = "*.html.erb,*.html,*.xhtml,*.phtml,*.jsx"
+let g:closetag_filenames = "*.html.erb,*.html,*.xhtml,*.phtml,*.jsx,*.js"
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
