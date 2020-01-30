@@ -203,8 +203,8 @@ map <Leader>cu :Tabularize /\|<CR>
 map <Leader>co mmggVG"*y`m
 " map <Leader>cc :Rjcollection client/
 map <Leader>cj :Rjspec client/
-map <Leader>n :tn<cr>
-map <Leader>p :tp<cr>
+map <Leader>n :cn<cr>
+map <Leader>p :cp<cr>
 map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
 map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
@@ -484,7 +484,8 @@ endfunction
 function! SearchForDeclaration(term)
   let definition = 'def ' . a:term
   let class_definition = 'def self.' . a:term
-  let search = definition . '|' . class_definition
+  let scope_declaration = 'scope :' . a:term
+  let search = definition . '|' . class_definition . '|' . scope_declaration
   " echo search
   cexpr system('ag -w ' . shellescape(search))
 endfunction
