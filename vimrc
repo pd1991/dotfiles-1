@@ -130,6 +130,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+Plugin 'leafgarland/typescript-vim'
+
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
 " set foldlevelstart=99
