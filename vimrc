@@ -128,6 +128,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
 " set foldlevelstart=99
