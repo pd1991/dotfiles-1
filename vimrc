@@ -129,8 +129,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 Plugin 'leafgarland/typescript-vim'
+
+Plugin 'dense-analysis/ale'
 
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
@@ -267,6 +268,7 @@ map <Leader>c ctagg<cr>
 noremap <silent><Leader>l :NERDTreeToggle<CR>
 noremap <silent><Leader>a :NERDTreeToggle<CR>
 noremap <silent> <leader>f :NERDTreeFind<cr>
+vmap <Leader>ab :'<,'>!sort<cr>
 
 function! FormatFile()
   normal! mmgg=G`m
