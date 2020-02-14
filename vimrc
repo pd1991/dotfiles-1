@@ -131,9 +131,6 @@ let g:UltiSnipsEditSplit="vertical"
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'leafgarland/typescript-vim'
 
-Plugin 'dense-analysis/ale'
-let g:ale_sign_column_always = 0
-
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
 " set foldlevelstart=99
