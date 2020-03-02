@@ -132,8 +132,6 @@ Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plugin 'dense-analysis/ale'
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
-let g:ale_sign_column_always = 1
-
 
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
@@ -273,6 +271,8 @@ noremap <silent> <leader>f :NERDTreeFind<cr>
 vmap <Leader>ab :'<,'>!sort<cr>
 vmap <Leader>pt :Prettier<cr>
 noremap <Leader>pt :Prettier<cr>
+noremap <Leader>at :ALEToggle<cr>
+noremap <Leader>ad :ALEDetail<cr>
 
 function! FormatFile()
   normal! mmgg=G`m
