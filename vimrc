@@ -129,7 +129,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plugin 'leafgarland/typescript-vim'
+
+Plugin 'dense-analysis/ale'
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_sign_column_always = 1
+
 
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
@@ -267,6 +271,8 @@ noremap <silent><Leader>l :NERDTreeToggle<CR>
 noremap <silent><Leader>a :NERDTreeToggle<CR>
 noremap <silent> <leader>f :NERDTreeFind<cr>
 vmap <Leader>ab :'<,'>!sort<cr>
+vmap <Leader>pt :Prettier<cr>
+noremap <Leader>pt :Prettier<cr>
 
 function! FormatFile()
   normal! mmgg=G`m
