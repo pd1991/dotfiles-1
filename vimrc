@@ -39,6 +39,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'jparise/vim-graphql'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'tpope/vim-dotenv'
 
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plugin 'junegunn/fzf.vim'
@@ -132,6 +133,10 @@ Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plugin 'dense-analysis/ale'
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = "⚠️"
+let g:ale_fix_on_save = 1
+let g:ale_linters_explicit = 1
 
 " Folds
 " https://github.com/vim-utils/vim-ruby-fold/issues/4
