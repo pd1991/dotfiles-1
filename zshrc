@@ -36,7 +36,7 @@ source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
 
 # courtesy: https://www.lambrospetrou.com/articles/export-environment-variables-multiple-files-linux-bash/
-source <(find $HOME/Dropbox/Personal/env_vars/ -type f -exec sed -E -n 's/[^#]+/export &/ p' {} +)
+# source <(find $HOME/Dropbox/Personal/env_vars/ -type f -exec sed -E -n 's/[^#]+/export &/ p' {} +)
 
 # Add cabal bin
 export PATH=$PATH:~/.cabal/bin

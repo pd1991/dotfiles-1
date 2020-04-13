@@ -40,6 +40,7 @@ alias wlg='vi ~/Dropbox/notes/worklog.md'
 
 # Git stuff
 alias pushb=push_eba_branch
+alias skipci='git push -o ci.skip'
 alias push!=force_push_eba_branch
 alias ga='git add'
 alias gf='git fetch'
