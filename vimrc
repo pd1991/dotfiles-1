@@ -382,6 +382,7 @@ set textwidth=79
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set lazyredraw " Don't redraw screen when running macros.
+set nofixendofline
 "
 " Use the colorscheme from above
 " colorscheme solarized
