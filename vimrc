@@ -529,8 +529,8 @@ endfunction
 
 "Now using thoughtbot/vim-rspec and tpope/dispatch.
 
-" let g:rspec_command = '!clear && bin/rspec {spec}'
-let g:rspec_command = 'Dispatch bin/rspec {spec}'
+let g:rspec_command = '!clear && bin/rspec {spec}'
+" let g:rspec_command = 'Dispatch bin/rspec {spec}'
 let g:dispatch_quickfix_height=25
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
