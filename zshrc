@@ -35,6 +35,8 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 source $HOME/.dotfiles/zsh/prompt
 
+source $HOME/.environment_variables
+
 # courtesy: https://www.lambrospetrou.com/articles/export-environment-variables-multiple-files-linux-bash/
 # source <(find $HOME/Dropbox/Personal/env_vars/ -type f -exec sed -E -n 's/[^#]+/export &/ p' {} +)
 
