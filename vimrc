@@ -201,7 +201,6 @@ runtime macros/matchit.vim
 let mapleader = ","
 
 imap jj <esc>
-" vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>b :Gblame<cr>
 map <Leader>tw :set textwidth=999<cr>
 map <Leader>bb :!bundle install<cr>
@@ -221,7 +220,7 @@ map <Leader>cd :call SearchForRubyMethodDeclarationCursor()<CR>
 map <Leader>cf :call SearchForRubyClassCursor()<CR>
 nnoremap <silent> <Leader>sa :Ag <C-R><C-W><CR>
 map <Leader>g :Gstatus<cr>
-map <Leader>s :Ag 
+map <Leader>s :Ag
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
 map <Leader>d Obinding.pry<esc>:w<cr>
@@ -311,7 +310,6 @@ noremap <leader>0 :tablast<cr>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-
 " Open tree of the current file's parent folder
 " Example:
 "   pwd: /code/my-proj/file.txt
@@ -369,7 +367,6 @@ set autoread
 set wmh=0
 set viminfo+=!
 set guioptions-=T
-set guifont=Triskweline_10:h10
 set et
 set sw=2
 set smarttab
@@ -383,10 +380,7 @@ set gdefault " assume the /g flag on :s substitutions to replace all matches in 
 set autoindent " always set autoindenting on
 set lazyredraw " Don't redraw screen when running macros.
 set nofixendofline
-"
-" Use the colorscheme from above
-" colorscheme solarized
-" call togglebg#map("<F5>")
+
 colorscheme jellybeans
 let g:jellybeans_overrides = {
 \  'background': { 'guibg': '212121'  },
@@ -429,7 +423,6 @@ command! W w
 command! Wq wq
 command! WQ wq
 
-
 " Execute macro in q
 map Q @q
 
@@ -448,9 +441,6 @@ set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
-" Turn on spell-checking in markdown and text.
-" au BufRead,BufNewFile *.md,*.txt setlocal spell
-
 " Merge a tab into a split in the previous window
 function! MergeTabs()
   if tabpagenr() == 1
@@ -468,13 +458,6 @@ function! MergeTabs()
 endfunction
 
 nmap <C-W>u :call MergeTabs()<CR>
-
-
-" Squash all commits into the first during rebase
-function! SquashAll()
-  normal ggj}klllcf:w
-endfunction
-
 
 function! SearchForCallSitesCursor()
   let searchTerm = expand("<cword>")
@@ -513,24 +496,12 @@ function! SearchForRubyClass(term)
   cexpr system('ag -w ' . shellescape(search))
 endfunction
 
-" Make CtrlP use ag for listing the files. Way faster and no useless files.
-" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" let g:ctrlp_use_caching = 0
-" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-" let g:ctrlp_custom_ignore = {
-"       \ 'dir':  'cache\|bundle\|node_modules'
-"       \ }
-"
-" let g:ctrlp_match_window = 'min:4,max:999'
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Now using thoughtbot/vim-rspec and tpope/dispatch.
-
+"Now using thoughtbot/vim-rspec
 let g:rspec_command = '!clear && bin/rspec {spec}'
-" let g:rspec_command = 'Dispatch bin/rspec {spec}'
 let g:dispatch_quickfix_height=25
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -541,24 +512,12 @@ inoremap <Tab> <C-P>
 nmap k gk
 nmap j gj
 
-
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.
 set timeoutlen=500
-
-" Remove trailing whitespace on save for ruby files.
-" au BufWritePre *.rb :%s/\s\+$//e
-
-function! OpenFactoryFile()
-  if filereadable("test/factories.rb")
-    execute ":sp test/factories.rb"
-  else
-    execute ":sp spec/factories.rb"
-  end
-endfunction
 
 " Set gutter background to black
 highlight SignColumn ctermbg=black
@@ -601,23 +560,9 @@ autocmd FileType qf setlocal wrap linebreak
 
 "  Make sure tmux does not overlap vim splits
 autocmd VimResized * :wincmd =
+
 " Make it more obviouser when lines are too long
 highlight ColorColumn ctermbg=235
-
-" CtrlP auto cache clearing.
-" ----------------------------------------------------------------------------
-" function! SetupCtrlP()
-"   if exists("g:loaded_ctrlp") && g:loaded_ctrlp
-"     augroup CtrlPExtension
-"       autocmd!
-"       autocmd FocusGained  * CtrlPClearCache
-"       autocmd BufWritePost * CtrlPClearCache
-"     augroup END
-"   endif
-" endfunction
-" if has("autocmd")
-"   autocmd VimEnter * :call SetupCtrlP()
-" endif
 
 command! Path :call EchoPath()
 function! EchoPath()
