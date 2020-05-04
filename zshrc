@@ -61,3 +61,4 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/node@12/bin:$PATH"
