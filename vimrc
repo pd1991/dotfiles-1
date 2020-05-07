@@ -96,8 +96,10 @@ let g:elm_setup_keybindings = 0 " Get the fuck out of my bindings
 " let g:elm_format_autosave = 1
 
 " Colors
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'kaicataldo/material.vim'
+if (has('termguicolors'))
+  set termguicolors
+endif
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
@@ -265,6 +267,7 @@ map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <Leader>nn :noh<cr>
 map <Leader>cl :w<cr>:exe "! clear && cucumber %" . ":" . line(".")<cr>
+map <Leader>ch :w<cr>:exe "! clear && CHROME_HEADLESS=false cucumber %" . ":" . line(".")<cr>
 map <Leader>sc :setlocal spell spelllang=en_us<cr>
 map <Leader>ns :set nospell<cr>
 map <Leader>mm [<C-d>
@@ -277,6 +280,7 @@ vmap <Leader>pt :Prettier<cr>
 noremap <Leader>pt :Prettier<cr>
 noremap <Leader>at :ALEToggle<cr>
 noremap <Leader>ad :ALEDetail<cr>
+map <Leader>ws :g/^$/d<cr>
 
 function! FormatFile()
   normal! mmgg=G`m
@@ -381,10 +385,12 @@ set autoindent " always set autoindenting on
 set lazyredraw " Don't redraw screen when running macros.
 set nofixendofline
 
-colorscheme jellybeans
-let g:jellybeans_overrides = {
-\  'background': { 'guibg': '212121'  },
-\}
+let g:material_terminal_italics = 1
+colorscheme material
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let &t_ZH="\<Esc>[3m"
+let &t_ZR="\<Esc>[23m"
 
 " Set the tag file search order
 " set tags=./tags;
